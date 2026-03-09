@@ -1,13 +1,21 @@
-cd ~/devops-assignment/docker-project
+# Environment variables - NEVER commit this
+.env
 
-# Create .gitignore
-cat > .gitignore << 'EOF'
+# Node
 frontend/node_modules/
 frontend/.env
+
+# Python
 backend/__pycache__/
 backend/*.pyc
 backend/venv/
+
+# VS Code
 .vscode/
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Docker
 *.log
-EOF.env
