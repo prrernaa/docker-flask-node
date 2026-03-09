@@ -10,4 +10,4 @@ backend/venv/
 .vscode/
 .DS_Store
 *.log
-EOF
+EOF.env

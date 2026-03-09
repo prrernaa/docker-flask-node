@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - MONGO_URI=mongodb+srv://prerna_db_user:7LGdbfizwfMioJ1G@cluster0.dgfcpdx.mongodb.net/?appName=Cluster0
+  - MONGO_URI=${MONGO_URI}
     networks:
       - app_network
     restart: always
