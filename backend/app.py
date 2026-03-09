@@ -7,8 +7,8 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# MongoDB Atlas Connection
-MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://prerna_db_user:7LGdbfizwfMioJ1G@cluster0.dgfcpdx.mongodb.net/?appName=Cluster0")
+# MongoDB URI from environment variable only
+MONGO_URI = os.environ.get("MONGO_URI")
 client = MongoClient(MONGO_URI)
 db = client["flask_assignment"]
 collection = db["docker_submissions"]
