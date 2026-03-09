@@ -1,0 +1,13 @@
+cd ~/devops-assignment/docker-project
+
+# Create .gitignore
+cat > .gitignore << 'EOF'
+frontend/node_modules/
+frontend/.env
+backend/__pycache__/
+backend/*.pyc
+backend/venv/
+.vscode/
+.DS_Store
+*.log
+EOF
