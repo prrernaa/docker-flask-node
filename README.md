@@ -84,3 +84,101 @@ docker pull prrernaa/node-frontend:latest
 | Backend   | Python + Flask    |
 | Database  | MongoDB Atlas     |
 | DevOps    | Docker + Compose  |
+
+
+## ☸️ Kubernetes Deployment (Minikube)
+
+This project is also deployed using Kubernetes locally via Minikube.
+
+### 📦 Architecture (Kubernetes)
+
+```
+Browser
+   ↓
+Frontend Service (NodePort)
+   ↓
+Frontend Pod (Node.js)
+   ↓
+Backend Service (ClusterIP)
+   ↓
+Backend Pod (Flask)
+   ↓
+MongoDB Service (ClusterIP)
+   ↓
+MongoDB Pod
+```
+
+---
+
+### 🚀 Steps to Run (Kubernetes)
+
+#### 1. Start Minikube
+
+```
+minikube start
+eval $(minikube docker-env)
+```
+
+#### 2. Build Docker Images
+
+```
+docker build -t backend:v1 ./backend
+docker build -t frontend:v1 ./frontend
+```
+
+#### 3. Deploy to Kubernetes
+
+```
+kubectl apply -f k8s/
+```
+
+#### 4. Verify Deployment
+
+```
+kubectl get pods
+kubectl get svc
+```
+
+#### 5. Access Application
+
+```
+minikube service frontend-service
+```
+
+---
+
+### 📌 Services Used
+
+| Component        | Type      | Purpose         |
+| ---------------- | --------- | --------------- |
+| frontend-service | NodePort  | Expose UI       |
+| backend-service  | ClusterIP | Internal API    |
+| mongo-service    | ClusterIP | Database access |
+
+---
+
+### ⚠️ Important Notes
+
+* Frontend communicates with backend using:
+
+  ```
+  http://backend-service:5000
+  ```
+* Backend connects to MongoDB using:
+
+  ```
+  mongodb://mongo-service:27017
+  ```
+* `localhost` is NOT used inside Kubernetes for service communication.
+
+---
+
+### 📸 Screenshots (to be added)
+
+* Pods running (`kubectl get pods`)
+* Services (`kubectl get svc`)
+* Application UI working
+* Successful form submission
+
+---
+
