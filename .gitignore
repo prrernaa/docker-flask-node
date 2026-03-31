@@ -19,3 +19,9 @@ Thumbs.db
 
 # Docker
 *.log
+minikube-linux-amd64
+preloaded-images*
+node_modules/
+__pycache__/
+.env
+

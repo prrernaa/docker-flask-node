@@ -4,7 +4,7 @@ const path    = require("path");
 
 const app  = express();
 const PORT = 3000;
-const FLASK_URL = process.env.FLASK_URL || "http://backend:5000";
+const FLASK_URL = process.env.FLASK_URL || "http://backend-service:5000";
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
