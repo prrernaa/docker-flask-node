@@ -173,12 +173,49 @@ minikube service frontend-service
 
 ---
 
-### 📸 Screenshots (to be added)
+## 🧠 Design Decisions
 
-* Pods running (`kubectl get pods`)
-* Services (`kubectl get svc`)
-* Application UI working
-* Successful form submission
+* **Why separate frontend and backend deployments?**
+  They scale independently and can be updated without affecting each other.
+
+* **Why use Services instead of localhost?**
+  Kubernetes assigns dynamic IPs to pods, so Services provide stable DNS-based communication.
+
+* **Why NodePort for frontend?**
+  Frontend must be accessible from browser (external access).
+
+* **Why ClusterIP for backend and MongoDB?**
+  These are internal services and should not be exposed publicly.
 
 ---
+
+## 🛠️ Common Issues & Fixes
+
+* **ImagePullBackOff**
+
+  * Cause: Image not available in Minikube Docker
+  * Fix: Run `eval $(minikube docker-env)` and rebuild images
+
+* **404 Error**
+
+  * Cause: Incorrect API route
+  * Fix: Use `/health` or `/submit`
+
+* **500 Internal Server Error**
+
+  * Cause: Missing `MONGO_URI`
+  * Fix: Add environment variable in backend deployment
+
+---
+
+## 🔗 Kubernetes Learning Outcome
+
+This project demonstrates:
+
+* Containerization using Docker
+* Orchestration using Kubernetes
+* Service-to-service communication using DNS
+* Environment variable management
+* Debugging real deployment issues
+
 
