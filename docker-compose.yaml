@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-  - MONGO_URI=${MONGO_URI}
+      MONGO_URI: ${MONGO_URI}
     networks:
       - app_network
     restart: always
