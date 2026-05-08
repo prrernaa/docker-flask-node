@@ -383,31 +383,31 @@ Backend Pod
 ## Task 1 — Single EC2
 
 ```text
-ADD_SINGLE_EC2_URL_HERE
+http://34.207.134.46:5000/
 ```
 
 ## Task 2 — Frontend EC2
 
 ```text
-ADD_FRONTEND_EC2_URL_HERE
+http://3.86.2.130:3000/submit
 ```
 
 ## Task 2 — Backend EC2
 
 ```text
-ADD_BACKEND_EC2_HEALTH_URL_HERE
+http://35.175.105.224:5000/health
 ```
 
 ## Task 3 — ECS Frontend
 
 ```text
-ADD_ECS_FRONTEND_URL_HERE
+http://3.86.2.130:3000/submit
 ```
 
 ## Task 3 — ECS Backend
 
 ```text
-ADD_ECS_BACKEND_HEALTH_URL_HERE
+http://35.175.105.224:5000/health
 ```
 
 ---
